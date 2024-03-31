@@ -4,8 +4,7 @@ import ImageCompleteTask2 from "../../assets/imagens/complete_task_versao2.svg";
 import NewTask from "../../assets/imagens/nova tarefa.svg";
 import * as S from "./styles";
 
-import { useContext, useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 import Alert from "../../components/Alert";
 import DateCalendar from "../../components/Calendar";
 import DoneTasks from "../../components/DoneTasks";
@@ -19,8 +18,6 @@ import ConfirmAction, { AddTaskProps, DeleteTaskProps, EditTaskProps } from "../
 import TaskTitle from "../../components/titles/TaskTitle";
 import { CalendarProvider } from "../../contexts/CalendarContext";
 import { TasksProvider } from "../../contexts/TasksContext";
-import { UserContext } from "../../contexts/UserContext";
-import { useAuth } from "../../hooks/useAuth";
 import { UseCRUD } from "../../hooks/useCrud";
 import { ScrollToTop } from "../../utils/ScrollToTop";
 
@@ -33,7 +30,7 @@ export interface Itasks {
   priority: string;
   tag: string;
   category: string;
-  checked?:boolean
+  checked?: boolean;
 }
 
 export default function DashboardPage() {
@@ -46,10 +43,10 @@ export default function DashboardPage() {
   >(null);
   const [dataTask, setDataTask] = useState<IAddTaskForm | null>(null);
 
-  const { user } = useContext(UserContext);
-  const token = localStorage.getItem("token");
-  const navigate = useNavigate();
-  const { authorization } = useAuth();
+  // const { user } = useContext(UserContext);
+  // const token = localStorage.getItem("token");
+  // const navigate = useNavigate();
+  // const { authorization } = useAuth();
 
   const crudTasks = {
     addTask: {
