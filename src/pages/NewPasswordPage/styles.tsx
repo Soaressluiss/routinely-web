@@ -110,3 +110,17 @@ export const InputContainer = styled.div`
     margin: 24px 0 16px;
   }
 `;
+
+export const ShowPasswordButton = styled.button`
+  color: #171a21;
+  font-size: 0.75rem;
+  line-height: 16px;
+  letter-spacing: 0.5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  right: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+`;

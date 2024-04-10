@@ -13,7 +13,8 @@ export const getAllTasks = async (token:string, month?: number, year?: number) =
         Authorization: `Bearer ${token}`
       }
     });
-    const tasks = data as Itasks[]    
+    const tasks = data as Itasks[]   
+    
     
     if (tasks.length > 0 ) {
       tasks.forEach(task => {
@@ -21,8 +22,6 @@ export const getAllTasks = async (token:string, month?: number, year?: number) =
         task.hour = TimeFormat(task.hour);
       });
     }
-    
-    
     return data as Itasks[];
   } catch (error) {
     throw new Error(error instanceof Error ? error.message: "error getAllTask" );
